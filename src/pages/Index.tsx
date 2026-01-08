@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 import {
   ArrowRight, Code2, Zap, Shield, Rocket, Target, Lightbulb, TrendingUp, Users,
   Globe, Server, Database, Cloud, Workflow, Mail, Phone, MapPin, Send,
-  MessageCircle, Linkedin, Github, Building2, Calendar, CheckCircle2, Brain
+  MessageCircle, Linkedin, Github, Building2, Calendar, CheckCircle2, Brain, ExternalLink
 } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
@@ -332,6 +332,27 @@ const socialLinks = [
     color: "bg-[#333] hover:bg-[#222] dark:bg-[#444] dark:hover:bg-[#555]",
   },
 ];
+
+const review = [
+  {
+    category: "Gaming / Real-Time Systems",
+    title: "Play Quiz Now – Real-Time Quiz Platform",
+    description: "Built a full-stack real-time quiz system with WebSockets, live scoring, team play, role-based access, analytics, and monetization features.",
+    technologies: ["Django", "Django REST Framework", "React.js", "PostgreSQL", "Redis", "WebSockets"],
+    highlights: [
+      "Real-time multiplayer experience",
+      "Scalable WebSocket architecture",
+      "Advanced admin & analytics dashboard",
+    ],
+    link: "https://playquiznow.com",
+    featured: true,
+  },
+];
+
+const testimonial = {
+  text: "From backend to frontend, I built and delivered the full platform — fast, clean, and production-ready. Seeing this kind of appreciation makes the hard work worth it.",
+  source: "Client Testimonial on LinkedIn",
+};
 
 const Index = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -790,6 +811,95 @@ const Index = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Featured Projects Section */}
+      <section id="projects" className="py-20 lg:py-32">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-sm font-medium text-primary mb-4"
+            >
+              Featured Projects
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl sm:text-4xl font-display font-bold"
+            >
+              Work That <span className="gradient-text">Speaks</span>
+            </motion.h2>
+          </div>
+
+          {/* Projects */}
+        <div className="space-y-8">
+          {review.map((project, index) => (
+            <div
+              key={index}
+              className="group p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
+            >
+              <div className="grid lg:grid-cols-2 gap-8">
+                {/* Left - Project Info */}
+                <div>
+                  <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+                    {project.category}
+                  </span>
+                  <h3 className="text-2xl font-bold mt-2 mb-4 text-foreground">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6">
+                    {project.description}
+                  </p>
+
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span
+                        key={techIndex}
+                        className="px-3 py-1 rounded-lg bg-primary/10 text-primary text-xs font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Link Button */}
+                  <Button
+                    variant="outline"
+                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group/btn"
+                    asChild
+                  >
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      Visit Project
+                      <ExternalLink className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </a>
+                  </Button>
+                </div>
+
+                {/* Right - Highlights */}
+                <div className="flex flex-col justify-center">
+                  <h4 className="text-lg font-semibold mb-4 text-foreground">
+                    Key Achievements
+                  </h4>
+                  <div className="space-y-3">
+                    {project.highlights.map((highlight, hIndex) => (
+                      <div key={hIndex} className="flex items-center gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
+                        <span className="text-muted-foreground">{highlight}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
         </div>
       </section>
 
