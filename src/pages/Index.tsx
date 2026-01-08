@@ -311,6 +311,15 @@ const contactInfo = [
     href: null,
   },
 ];
+const UpworkIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+  >
+    <path d="M18.561 7.685c-1.164 0-2.189.467-2.936 1.204-.693-1.37-1.102-2.798-1.303-3.84H11.8v6.876c0 1.604-1.013 2.768-2.58 2.768-1.555 0-2.52-1.164-2.52-2.768V5.05H4.25v6.876c0 3.047 2.204 5.133 5.017 5.133 2.812 0 4.81-2.086 4.81-5.133v-1.61c.226.694.51 1.38.852 2.02l-.9 4.674h2.406l.66-3.35c.463.083.95.13 1.466.13 2.812 0 4.94-1.852 4.94-4.605 0-2.74-2.128-4.5-4.94-4.5zm0 6.924c-1.11 0-2.012-.9-2.012-2.086 0-1.188.902-2.087 2.012-2.087 1.11 0 2.012.9 2.012 2.087 0 1.186-.902 2.086-2.012 2.086z"/>
+  </svg>
+);
 
 const socialLinks = [
   {
@@ -330,6 +339,13 @@ const socialLinks = [
     label: "GitHub",
     href: "https://github.com/mpcodx",
     color: "bg-[#333] hover:bg-[#222] dark:bg-[#444] dark:hover:bg-[#555]",
+  },
+
+  {
+    icon: UpworkIcon,
+    label: "Upwork",
+    href: "https://www.upwork.com/freelancers/~01ef1b6febcb42a709?mp_source=share",
+    color: "bg-[#25D366] hover:bg-[#20BD5C]",
   },
 ];
 
