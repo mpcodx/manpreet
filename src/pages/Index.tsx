@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 import {
   ArrowRight, Code2, Zap, Shield, Rocket, Target, Lightbulb, TrendingUp, Users,
   Globe, Server, Database, Cloud, Workflow, Mail, Phone, MapPin, Send,
-  MessageCircle, Linkedin, Github, Building2, Calendar, CheckCircle2, Brain, ExternalLink
+  MessageCircle, Linkedin, Github, Building2, Calendar, CheckCircle2, Brain, ExternalLink,Star, Quote
 } from "lucide-react";
 import { Layout } from "@/components/Layout";
 import { Button } from "@/components/ui/button";
@@ -353,7 +353,19 @@ const testimonial = {
   text: "From backend to frontend, I built and delivered the full platform — fast, clean, and production-ready. Seeing this kind of appreciation makes the hard work worth it.",
   source: "Client Testimonial on LinkedIn",
 };
-
+const reviews = [
+  {
+    name: "varun gulati",
+    role: "Founder",
+    platform: "Upwork",
+    avatar: "P",
+    rating: 5,
+    text: "We've been working with Rayon Web Solutions for over 5 years, and they’ve been an incredible tech partner throughout. Their team is sharp, reliable, and deeply skilled — from Django, PostgreSQL, and Heroku/AWS on the backend to ReactJS and Tailwind on the frontend. They’ve helped us go full-stack and scale smoothly, always bringing smart solutions to the table.Big thanks to the Rayon team — you’ve been a huge part of our journey, and we’re grateful for everything.",
+    project: "Full-Stack Quiz Platform",
+    link: "https://playquiznow.com",
+  },
+  
+];
 const Index = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [submitMessage, setSubmitMessage] = useState("");
@@ -814,94 +826,119 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Projects Section */}
-      <section id="projects" className="py-20 lg:py-32">
-        <div className="section-container">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-sm font-medium text-primary mb-4"
-            >
-              Featured Projects
-            </motion.p>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-3xl sm:text-4xl font-display font-bold"
-            >
-              Work That <span className="gradient-text">Speaks</span>
-            </motion.h2>
-          </div>
+       {/* Featured Projects Section */}
+     <section id="reviews" className="py-20 lg:py-32 relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
-          {/* Projects */}
-        <div className="space-y-8">
-          {review.map((project, index) => (
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-6">
+            <Star className="w-4 h-4 text-primary fill-primary" />
+            <span className="text-primary text-sm font-medium">Client Reviews</span>
+          </div>
+          <h2 className="text-3xl lg:text-5xl font-bold text-foreground">
+            What Clients <span className="text-primary">Say</span>
+          </h2>
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto text-lg">
+            Trusted by startups and businesses worldwide for delivering high-quality solutions
+          </p>
+        </div>
+
+        {/* Reviews Grid */}
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+          {reviews.map((review, index) => (
             <div
               key={index}
-              className="group p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300"
+              className="group relative bg-gradient-to-br from-card/80 to-card/40 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:border-primary/50 transition-all duration-500 hover:shadow-[0_0_40px_rgba(0,217,255,0.1)]"
             >
-              <div className="grid lg:grid-cols-2 gap-8">
-                {/* Left - Project Info */}
-                <div>
-                  <span className="text-xs font-semibold text-primary uppercase tracking-wider">
-                    {project.category}
-                  </span>
-                  <h3 className="text-2xl font-bold mt-2 mb-4 text-foreground">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-6">
-                    {project.description}
-                  </p>
+              {/* Quote Icon Background */}
+              <div className="absolute top-6 right-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                <Quote className="w-16 h-16 text-primary" />
+              </div>
 
-                  {/* Technologies */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 rounded-lg bg-primary/10 text-primary text-xs font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+              {/* Rating */}
+              <div className="flex gap-1 mb-6">
+                {[...Array(review.rating)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-5 h-5 fill-primary text-primary"
+                  />
+                ))}
+              </div>
 
-                  {/* Link Button */}
-                  <Button
-                    variant="outline"
-                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 group/btn"
-                    asChild
+              {/* Review Text */}
+              <p className="text-foreground/90 text-base leading-relaxed mb-8 relative z-10">
+                "{review.text}"
+              </p>
+
+              {/* Project Badge */}
+              <div className="mb-6">
+                {review.link ? (
+                  <a
+                    href={review.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm bg-primary/10 text-primary px-4 py-2 rounded-full hover:bg-primary/20 transition-colors"
                   >
-                    <a href={project.link} target="_blank" rel="noopener noreferrer">
-                      Visit Project
-                      <ExternalLink className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </a>
-                  </Button>
-                </div>
+                    {review.project}
+                    <ExternalLink className="w-3 h-3" />
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center text-sm bg-primary/10 text-primary px-4 py-2 rounded-full">
+                    {review.project}
+                  </span>
+                )}
+              </div>
 
-                {/* Right - Highlights */}
-                <div className="flex flex-col justify-center">
-                  <h4 className="text-lg font-semibold mb-4 text-foreground">
-                    Key Achievements
-                  </h4>
-                  <div className="space-y-3">
-                    {project.highlights.map((highlight, hIndex) => (
-                      <div key={hIndex} className="flex items-center gap-3">
-                        <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                        <span className="text-muted-foreground">{highlight}</span>
-                      </div>
-                    ))}
+              {/* Divider */}
+              <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent mb-6" />
+
+              {/* Reviewer Info */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  {/* Avatar */}
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 border border-primary/30 flex items-center justify-center group-hover:border-primary/50 transition-colors">
+                    <span className="text-primary font-bold text-lg">{review.avatar}</span>
                   </div>
+                  <div>
+                    <h4 className="text-foreground font-semibold">
+                      {review.name}
+                    </h4>
+                    <p className="text-muted-foreground text-sm">{review.role}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-muted-foreground bg-muted/50 px-3 py-1.5 rounded-full border border-border/50">
+                    via {review.platform}
+                  </span>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        {/* Stats */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          {[
+            { value: "100%", label: "Client Satisfaction" },
+            { value: "50+", label: "Projects Completed" },
+            { value: "5.0", label: "Average Rating" },
+            { value: "30+", label: "Happy Clients" },
+          ].map((stat, index) => (
+            <div key={index} className="text-center">
+              <div className="text-3xl lg:text-4xl font-bold text-primary mb-2">
+                {stat.value}
+              </div>
+              <div className="text-muted-foreground text-sm">{stat.label}</div>
+            </div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Contact Section */}
       <section id="contact" className="py-20 lg:py-32 bg-card/50">
