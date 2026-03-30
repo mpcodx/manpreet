@@ -29,6 +29,70 @@ const highlights = [
   { icon: Rocket, text: "Scalable Solutions" },
 ];
 
+const heroBadges = [
+  "SaaS & MVPs",
+  "AI-Ready Builds",
+  "React + Django",
+  "Remote-Friendly",
+];
+
+const trustPoints = [
+  { icon: CheckCircle2, text: "Production-ready delivery" },
+  { icon: Users, text: "Clear, proactive communication" },
+  { icon: Shield, text: "Security-first development" },
+  { icon: Zap, text: "Performance-focused engineering" },
+];
+
+const processSteps = [
+  {
+    icon: MessageCircle,
+    title: "Discover",
+    description: "Align on goals, users, scope, and success metrics.",
+    tag: "Step 1",
+  },
+  {
+    icon: Workflow,
+    title: "Design",
+    description: "Map user flows, architecture, and delivery plan.",
+    tag: "Step 2",
+  },
+  {
+    icon: Code2,
+    title: "Build",
+    description: "Ship in milestones with transparent progress updates.",
+    tag: "Step 3",
+  },
+  {
+    icon: Rocket,
+    title: "Launch & Optimize",
+    description: "Deploy, monitor, and iterate for measurable results.",
+    tag: "Step 4",
+  },
+];
+
+const faqs = [
+  {
+    question: "What types of projects do you take on?",
+    answer:
+      "I build SaaS products, MVPs, AI-enabled apps, and scalable web platforms for startups and established teams.",
+  },
+  {
+    question: "How do we start a project together?",
+    answer:
+      "Share your goals and requirements through the contact form. I will reply with a brief plan, timeline, and next steps.",
+  },
+  {
+    question: "Can you work with an existing team or codebase?",
+    answer:
+      "Yes. I can integrate with your team, audit existing systems, and deliver improvements without disrupting momentum.",
+  },
+  {
+    question: "What is your typical communication style?",
+    answer:
+      "Clear and proactive. I provide regular updates, highlight risks early, and keep deliverables transparent.",
+  },
+];
+
 const values = [
   {
     icon: Target,
@@ -239,57 +303,59 @@ const services = [
 
 const experiences = [
   {
-    role: "Technical Coordinator / Full-Stack Developer",
-    company: "Rayon Web Solutions",
-    period: "Mar 2024 - Present",
-    location: "Mohali · Remote",
-    achievements: [
-      "Leading full-stack development for client and in-house projects using Django, DRF, React, Redux, and modern frontend stacks",
-      "Designed scalable SaaS architectures and real-time systems including EdTech, publishing, and quiz platforms",
-      "Collaborating directly with clients to translate business requirements into robust technical solutions",
-      "Improved project delivery timelines through better code structure, reusable components, and CI/CD practices",
-    ],
-  },
-
-  {
     role: "Full Stack Engineer (Freelance)",
     company: "Freelance / Contract",
-    period: "Dec 2022 - Mar 2024",
+    period: "Dec 2022 - Present",
     location: "Hybrid",
     achievements: [
-      "Delivered multiple full-stack applications using React, JavaScript, Django, and REST APIs",
-      "Built responsive, high-performance UIs and integrated them with secure backend services",
-      "Worked with startups and agencies to develop MVPs, dashboards, and scalable web platforms",
-      "Handled end-to-end development including deployment, optimization, and maintenance",
+      "Delivered multiple full-stack applications using React, JavaScript, Django, FastAPI, and REST APIs, ensuring scalability and high performance",
+      "Designed and developed responsive, user-friendly interfaces integrated with secure and optimized backend services",
+      "Built and deployed AI-powered chatbot systems using NLP models, embeddings, and custom APIs for intelligent automation",
+      "Developed AI-based automation tools for data processing, content generation, and workflow optimization",
+      "Implemented real-time features using WebSockets for live chat, notifications, and multiplayer applications",
+      "Collaborated with startups and agencies to build MVPs, SaaS platforms, dashboards, and scalable web applications",
+      "Designed robust backend architectures with JWT/OAuth authentication, role-based access control, and API security best practices",
+      "Deployed and managed applications on AWS using Docker and CI/CD pipelines, ensuring reliability and scalability",
+      "Managed the complete development lifecycle including planning, development, deployment, monitoring, and maintenance"
     ],
   },
-
+  {
+    role: "Technical Coordinator / Full-Stack Developer",
+    company: "Rayon Web Solutions",
+    period: "Mar 2024 - Jan 2026",
+    location: "Mohali · Remote",
+    achievements: [
+      "Led full-stack development for client and in-house projects using Django, DRF, React, Redux, and modern frontend technologies",
+      "Designed scalable SaaS architectures and real-time systems for EdTech, publishing, and quiz platforms",
+      "Collaborated directly with clients to translate business requirements into efficient technical solutions",
+      "Improved project delivery speed by implementing reusable components and optimized development workflows",
+      "Established CI/CD pipelines and improved code quality through best practices and team coordination"
+    ],
+  },
   {
     role: "Python Developer",
     company: "Ameotech Informatics",
     period: "Jan 2021 - Dec 2022",
     location: "Sahibzada Ajit Singh Nagar, Punjab, India",
     achievements: [
-      "Developed backend systems using Django and Django REST Framework for enterprise applications",
-      "Designed and optimized APIs, improving data handling and response times",
-      "Worked closely with frontend teams to deliver seamless API integrations",
-      "Contributed to cloud deployments and production support",
+      "Developed scalable backend systems using Django and Django REST Framework for enterprise applications",
+      "Designed and optimized REST APIs, improving performance and data processing efficiency",
+      "Collaborated with frontend teams to ensure seamless API integration and user experience",
+      "Supported cloud deployments and handled production-level issue resolution"
     ],
   },
-
   {
     role: "Python Developer",
     company: "Vidya Pranali",
     period: "Nov 2019 - Dec 2020",
     location: "Sahibzada Ajit Singh Nagar, Punjab, India",
     achievements: [
-      "Built and maintained Python-based backend services for web applications",
-      "Worked with AWS EC2 for deployment, scaling, and server management",
-      "Improved application stability and performance through debugging and optimization",
+      "Built and maintained backend services using Python and Django for web applications",
+      "Managed deployments on AWS EC2, including scaling, monitoring, and server maintenance",
+      "Enhanced application performance and stability through debugging and optimization"
     ],
   },
 ];
-
 
 const contactInfo = [
   {
@@ -331,7 +397,7 @@ const socialLinks = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: "hhttps://www.linkedin.com/in/er-manpreet-singh-0a5a7a192",
+    href: "https://www.linkedin.com/in/er-manpreet-singh-0a5a7a192",
     color: "bg-[#0A66C2] hover:bg-[#004182]",
   },
   {
@@ -371,12 +437,12 @@ const testimonial = {
 };
 const reviews = [
   {
-    name: "varun gulati",
+    name: "Varun Gulati",
     role: "Founder",
     platform: "Upwork",
     avatar: "P",
     rating: 5,
-    text: "We've been working with Rayon Web Solutions for over 5 years, and they’ve been an incredible tech partner throughout. Their team is sharp, reliable, and deeply skilled — from Django, PostgreSQL, and Heroku/AWS on the backend to ReactJS and Tailwind on the frontend. They’ve helped us go full-stack and scale smoothly, always bringing smart solutions to the table.Big thanks to the Rayon team — you’ve been a huge part of our journey, and we’re grateful for everything.",
+    text: "We've been working with Rayon Web Solutions for over 5 years, and they’ve been an incredible tech partner throughout. Their team is sharp, reliable, and deeply skilled — from Django, PostgreSQL, and Heroku/AWS on the backend to ReactJS and Tailwind on the frontend. They’ve helped us go full-stack and scale smoothly, always bringing smart solutions to the table. Big thanks to the Rayon team — you’ve been a huge part of our journey, and we’re grateful for everything.",
     project: "Full-Stack Quiz Platform",
     link: "https://playquiznow.com",
   },
@@ -467,6 +533,23 @@ const Index = () => {
                 <span className="text-sm font-medium text-accent-foreground">Available for new projects</span>
               </motion.div>
 
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.05 }}
+                className="flex flex-wrap gap-2 mb-6"
+              >
+                {heroBadges.map((badge) => (
+                  <Badge
+                    key={badge}
+                    variant="secondary"
+                    className="text-xs bg-card/80 border border-border/60 text-muted-foreground"
+                  >
+                    {badge}
+                  </Badge>
+                ))}
+              </motion.div>
+
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -474,16 +557,20 @@ const Index = () => {
                 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold leading-tight mb-6"
               >
                 Hi, I'm <span className="gradient-text">Manpreet Singh</span>
+                <span className="block text-xl sm:text-2xl lg:text-3xl text-foreground/90 font-semibold mt-3">
+                  Senior Full-Stack Developer
+                </span>
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-xl text-muted-foreground max-w-xl mb-8"
+                className="text-lg sm:text-xl text-muted-foreground max-w-xl mb-8"
               >
-                Senior Full-Stack Developer crafting scalable digital experiences with clean code and smart architecture.{" "}
-                <span className="text-foreground font-medium">6+ years</span> of building production-ready applications.
+                I build SaaS platforms, MVPs, and AI-powered products with React, Django, and cloud-first architecture.
+                <span className="text-foreground font-medium"> 6+ years</span> of production delivery with a focus on
+                performance, reliability, and clean code.
               </motion.p>
 
               <motion.div
@@ -505,12 +592,15 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="flex flex-wrap gap-6"
+                className="flex flex-wrap gap-3"
               >
                 {highlights.map((item, index) => (
-                  <div key={index} className="flex items-center gap-2 text-muted-foreground">
+                  <div
+                    key={index}
+                    className="inline-flex items-center gap-2 rounded-full bg-card/80 border border-border/60 px-3 py-1.5 text-xs text-muted-foreground shadow-sm"
+                  >
                     <item.icon className="w-4 h-4 text-primary" />
-                    <span className="text-sm">{item.text}</span>
+                    <span>{item.text}</span>
                   </div>
                 ))}
               </motion.div>
@@ -529,7 +619,12 @@ const Index = () => {
                   {/* Placeholder for profile picture - replace src with your image */}
                   <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent flex items-center justify-center">
                     {/* <span className="text-6xl font-display font-bold gradient-text">MS</span> */}
-                    <img src="/manpreet-singh.png" />
+                    <img
+                      src="/manpreet-singh.png"
+                      alt="Manpreet Singh portrait"
+                      className="w-full h-full object-cover"
+                      loading="eager"
+                    />
                   </div>
                 </div>
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-card border border-border rounded-2xl shadow-xl flex items-center justify-center">
@@ -545,7 +640,7 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-card/50 border-y border-border">
+      <section className="py-16 bg-gradient-to-b from-card/60 via-card/30 to-card/60 border-y border-border/60">
         <div className="section-container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -624,7 +719,7 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 lg:py-32 bg-card/50">
+      <section id="skills" className="py-20 lg:py-32 bg-gradient-to-b from-card/60 via-card/30 to-card/60">
         <div className="section-container">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <motion.p
@@ -736,7 +831,7 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 lg:py-32 bg-card/50">
+      <section id="services" className="py-20 lg:py-32 bg-gradient-to-b from-card/60 via-card/30 to-card/60">
         <div className="section-container">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <motion.p
@@ -773,6 +868,80 @@ const Index = () => {
                 </div>
                 <h3 className="text-lg font-display font-semibold mb-2">{service.title}</h3>
                 <p className="text-muted-foreground text-sm">{service.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section id="process" className="py-20 lg:py-32">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-sm font-medium text-primary mb-4"
+            >
+              PROCESS
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl sm:text-4xl font-display font-bold"
+            >
+              A Clear Path From <span className="gradient-text">Idea to Launch</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-lg text-muted-foreground mt-4"
+            >
+              A transparent, structured workflow that keeps delivery smooth and expectations aligned.
+            </motion.p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            {trustPoints.map((point, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08 }}
+                className="flex items-center gap-3 rounded-2xl bg-card/80 border border-border/60 px-4 py-3 text-sm text-muted-foreground shadow-sm"
+              >
+                <point.icon className="w-4 h-4 text-primary" />
+                <span>{point.text}</span>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {processSteps.map((step, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="glass-card glow-hover p-6 h-full"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center">
+                    <step.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <span className="text-xs text-muted-foreground bg-card/80 border border-border/60 px-2.5 py-1 rounded-full">
+                    {step.tag}
+                  </span>
+                </div>
+                <h3 className="text-lg font-display font-semibold mb-2">{step.title}</h3>
+                <p className="text-muted-foreground text-sm">{step.description}</p>
               </motion.div>
             ))}
           </div>
@@ -842,8 +1011,8 @@ const Index = () => {
         </div>
       </section>
 
-       {/* Featured Projects Section */}
-     <section id="reviews" className="py-20 lg:py-32 relative overflow-hidden">
+      {/* Reviews Section */}
+      <section id="reviews" className="py-20 lg:py-32 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
@@ -956,8 +1125,58 @@ const Index = () => {
       </div>
     </section>
 
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 lg:py-32 bg-gradient-to-b from-background via-card/30 to-background">
+        <div className="section-container">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-sm font-medium text-primary mb-4"
+            >
+              FAQ
+            </motion.p>
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl sm:text-4xl font-display font-bold"
+            >
+              Quick Answers for <span className="gradient-text">Fast Decisions</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-lg text-muted-foreground mt-4"
+            >
+              Clear responses to common questions so you can move forward with confidence.
+            </motion.p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="glass-card glow-hover p-6"
+              >
+                <h3 className="text-lg font-display font-semibold mb-2">{faq.question}</h3>
+                <p className="text-muted-foreground text-sm">{faq.answer}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
-      <section id="contact" className="py-20 lg:py-32 bg-card/50">
+      <section id="contact" className="py-20 lg:py-32 bg-gradient-to-b from-card/60 via-card/30 to-card/60">
         <div className="section-container">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <motion.p
