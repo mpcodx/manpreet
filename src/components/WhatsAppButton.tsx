@@ -1,7 +1,7 @@
 import { MessageCircle } from "lucide-react";
 
 export const WhatsAppButton = () => {
-  const phoneNumber = "9783870541";
+  const phoneNumber = "919783870541";
   const message = encodeURIComponent("Hi Manpreet, I'd like to discuss a project.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
@@ -25,8 +25,8 @@ export const WhatsAppButton = () => {
         {/* Tooltip */}
         <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
           <div className="bg-card border border-border rounded-lg px-3 py-2 shadow-lg whitespace-nowrap">
-            <p className="text-sm font-medium">Chat with me</p>
-            <p className="text-xs text-muted-foreground">Usually replies instantly</p>
+            <p className="text-sm font-bold text-foreground">Chat with Manpreet</p>
+            <p className="text-xs text-muted-foreground">+91 97838 70541 • Usually replies instantly</p>
           </div>
         </div>
       </div>

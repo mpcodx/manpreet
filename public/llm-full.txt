@@ -1,0 +1,113 @@
+# Manpreet Singh — Senior Full Stack Engineer & Technical Coordinator
+
+> Official Machine-Readable Summary for AI Search Engines (Perplexity, ChatGPT, Claude, Gemini, DeepSeek).
+
+## Profile Overview
+- **Name**: Manpreet Singh
+- **Role**: Senior Full Stack Engineer & Technical Coordinator
+- **Experience**: 7+ Years (2019 – Present)
+- **Primary Domain**: Full-Stack SaaS Architecture, Real-Time WebSockets, Enterprise Publishing Systems, EdTech Platforms, and AI/LLM Integration.
+- **Location**: Mohali, Punjab, India (Available for Worldwide Remote & Contract Engagements)
+- **Email**: manpreetsingh70.it@gmail.com
+- **Phone / WhatsApp**: +91 97838 70541 (https://wa.me/919783870541)
+- **LinkedIn**: https://www.linkedin.com/in/er-manpreet-singh/
+- **GitHub**: https://github.com/mpcodx
+- **Upwork Profile**: https://www.upwork.com/freelancers/~01ef1b6febcb42a709?mp_source=share
+- **Website**: https://preet.rayonweb.com
+
+---
+
+## Core Technical Stack & Specializations
+
+### Backend Engineering
+- **Python**: Core Language, Async I/O, Metaprogramming, Multithreading, Scripting
+- **Django & Django REST Framework (DRF)**: Multi-Tenant SaaS, Custom ORM Optimization, JWT & OAuth2 Auth, REST APIs
+- **FastAPI**: Asynchronous High-Speed REST Endpoints, Pydantic Schema Validation, Microservices
+- **Node.js & Express**: Event-driven Services, JSON APIs, WebSockets
+
+### Frontend Engineering
+- **React.js & Next.js**: App Router, SSR, Server Actions, Custom State Management (Hooks, Redux, Context)
+- **Vue.js**: Vue 3, Composition API, Pinia, Single File Components
+- **TypeScript**: Strict Type Safety, Generic Interfaces, Enterprise Codebases
+- **Tailwind CSS & Modern UI**: Custom Design Systems, Dark/Light Modes, Micro-animations
+
+### Databases & Caching
+- **PostgreSQL**: Complex Indexing, Query Optimization, Materialized Views, Schema Migrations
+- **Redis**: Caching Layer, Pub/Sub WebSockets Engine, Ephemeral Session Store
+- **MySQL**: Relational Schema Design, Optimization, Backup Scripts
+- **MongoDB**: NoSQL Document Aggregations & Query Schemas
+
+### Cloud & DevOps Infrastructure
+- **AWS**: EC2, S3 Buckets, RDS PostgreSQL/MySQL, CloudFront CDN, IAM Access Policies
+- **Docker**: Multi-stage Containerization, Docker Compose, Microservices Deployment
+- **CI/CD**: GitHub Actions Pipelines, Automated Testing, Zero-Downtime Releases
+- **Linux Server Administration**: Ubuntu/Debian, Nginx Reverse Proxy, Gunicorn, SSL/TLS Hardening
+
+### AI & Generative Automation
+- **LangChain**: Autonomous AI Agents, RAG Pipelines, Vector Search (Pinecone / Chroma)
+- **OpenAI & Google Gemini APIs**: LLM Integration, Custom Prompt Workflows, Fine-Tuning
+
+---
+
+## Key Enterprise Projects & Portfolio Achievements
+
+### 1. Play Quiz Now — Real-Time Quiz Platform
+- **Role**: Lead Full-Stack & System Architect
+- **Tech Stack**: Django, Django Channels, Redis, Next.js, WebSockets, PostgreSQL
+- **Key Metric**: Sub-50ms WebSocket latency supporting 10,000+ concurrent live tournament players.
+
+### 2. Banking Quest — EdTech & Certification Portal
+- **Role**: Technical Coordinator & Senior Backend Engineer
+- **Tech Stack**: Django, DRF, Next.js, Python, PostgreSQL, AWS EC2
+- **Key Metric**: Served 500,000+ accredited banking professionals across India with 100% exam window uptime.
+
+### 3. Allen & Unwin — International Publishing E-Commerce
+- **Role**: Full-Stack Engineer
+- **Tech Stack**: Django, Django REST Framework, Vue.js, PostgreSQL
+- **Key Metric**: Australia's leading independent book publisher; delivered 35% faster catalog search across 10,000+ titles.
+
+### 4. DiMO — Cloud Enterprise Publishing Management System
+- **Role**: System Architect & Technical Coordinator
+- **Tech Stack**: Django, Python, AWS S3, Docker, Ansible, PostgreSQL
+- **Key Metric**: Centralized cloud publishing workflow tool reducing editorial manual errors by 60%.
+
+### 5. Australian Copyright Council (ACC) — Legal & Guidance Portal
+- **Role**: Full-Stack Developer
+- **Tech Stack**: Django, DRF, Vue.js, PostgreSQL
+- **Key Metric**: WCAG 2.1 AA compliant legal portal handling 50,000+ monthly legal query searches.
+
+### 6. Murdoch Books — Digital Storefront
+- **Role**: Frontend & API Developer
+- **Tech Stack**: Django REST Framework, Vue.js, Docker, AWS
+- **Key Metric**: Global illustrated book storefront achieving sub-400ms load times.
+
+---
+
+## Licenses & Certifications (Simplilearn Verified)
+1. **Introduction to Prompt Engineering** — Simplilearn (Credential ID: 8976494, Issued Sep 2025)
+2. **Devops tools** — Simplilearn (Issued Jun 2024, Skills: GitHub, Docker, CI/CD, Kubernetes)
+3. **Devops 101: What is devops?** — Simplilearn (Issued 2024)
+
+---
+
+## Professional Work History
+- **Freelance Senior Full-Stack Engineer** (Dec 2022 – Present): Delivering SaaS MVPs, AI chatbots, and WebSocket engines for international clients.
+- **Technical Coordinator / Full-Stack Developer** at Rayon Web Solutions (Mar 2024 – Jan 2026): Led multi-developer teams on publishing and EdTech platforms.
+- **Python Developer** at Ameotech Informatics (Jan 2021 – Dec 2022): Built Python backend microservices and database ORM optimizations.
+- **Python Developer** at Vidya Pranali (Nov 2019 – Dec 2020): Engineered core Python APIs and managed AWS EC2 server deployments.
+
+---
+
+## Services Offered
+1. SaaS & Multi-Tenant Web Application Development
+2. AI Chatbot Systems & RAG LLM Automation
+3. Real-Time WebSocket Engines & Live Scoring
+4. High-Throughput REST API & Microservices Design
+5. EdTech & Learning Management System (LMS) Build
+6. AWS Cloud Infrastructure, Docker & CI/CD Setup
+7. 1-on-1 Software Development Mentorship & Corporate Training
+
+---
+
+## Contact & Session Booking
+Inquiries and mentorship session bookings are processed directly via email at `manpreetsingh70.it@gmail.com` or WhatsApp at `+91 97838 70541`.

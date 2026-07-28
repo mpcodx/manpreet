@@ -1,0 +1,22 @@
+/* TEAM */
+  Senior Full-Stack Engineer & Technical Coordinator: Manpreet Singh
+  Contact Email: manpreetsingh70.it@gmail.com
+  Phone / WhatsApp: +91 97838 70541 (https://wa.me/919783870541)
+  Location: Mohali, Punjab, India (Available Worldwide & Remote)
+  LinkedIn: https://www.linkedin.com/in/er-manpreet-singh/
+  GitHub: https://github.com/mpcodx
+  Upwork Profile: https://www.upwork.com/freelancers/~01ef1b6febcb42a709?mp_source=share
+  Official Portfolio: https://preet.rayonweb.com
+
+/* SITE & SPECIFICATIONS */
+  Last Update: 2026/07/28
+  Language: English (en_US)
+  Doctype: HTML5
+  Standards: WCAG 2.1 AA Accessibility, Responsive Mobile-First Architecture
+
+/* TECHNOLOGIES & STACK */
+  Frontend: React 18, Next.js, Vue.js, TypeScript, Tailwind CSS, Framer Motion, Radix UI
+  Backend: Python, Django, Django REST Framework, FastAPI, Node.js
+  Databases: PostgreSQL, MySQL, MongoDB, Redis Pub/Sub WebSockets
+  Cloud & DevOps: AWS (EC2, S3, RDS), Docker, Nginx, GitHub Actions CI/CD
+  Certifications: Simplilearn Prompt Engineering (8976494), Simplilearn DevOps Tools
