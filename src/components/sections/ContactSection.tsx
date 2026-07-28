@@ -31,57 +31,54 @@ export const ContactSection = () => {
     setIsSubmitting(true);
 
     const targetEmail = "manpreetsingh70.it@gmail.com";
-    const formSubmitHash = "88aeb9484a1213b3f8f2bc9b2dd2755c";
-    let sentSuccessfully = false;
+    let sentViaEmailJS = false;
 
-    // 1. Try EmailJS if env keys are present
+    // EmailJS Environment Variables
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    if (serviceId && templateId && publicKey && formRef.current) {
+    if (serviceId && templateId && publicKey) {
       try {
-        await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey);
-        sentSuccessfully = true;
-      } catch (err) {
-        console.warn("EmailJS error, falling back to simple email API...", err);
-      }
-    }
+        const formattedMessage = `Service Needed: ${formData.service}
+Estimated Budget: ${formData.budget}
+Subject: ${formData.subject || `Portfolio Query from ${formData.name}`}
 
-    // 2. Fallback to FormSubmit simple clean email service
-    if (!sentSuccessfully) {
-      try {
-        const response = await fetch(`https://formsubmit.co/ajax/${formSubmitHash}`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
+Message:
+${formData.message}`;
+
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            name: formData.name,
+            email: formData.email,
+            your_name: formData.name,
+            your_email: formData.email,
+            user_name: formData.name,
+            user_email: formData.email,
+            from_name: formData.name,
+            from_email: formData.email,
+            reply_to: formData.email,
+            to_email: targetEmail,
+            service: formData.service,
+            service_needed: formData.service,
+            budget: formData.budget,
+            estimated_budget: formData.budget,
+            subject: formData.subject || `Portfolio Query from ${formData.name}`,
+            message: formattedMessage
           },
-          body: JSON.stringify({
-            "Client Name": formData.name,
-            "Client Email": formData.email,
-            "Service Requested": formData.service,
-            "Estimated Budget": formData.budget,
-            "Subject": formData.subject || `Portfolio Query from ${formData.name}`,
-            "Project Message": formData.message,
-            "_subject": `📥 New Portfolio Inquiry: ${formData.subject || formData.name}`,
-            "_replyto": formData.email,
-            "_template": "table",
-            "_captcha": "false"
-          })
-        });
-
-        if (response.ok) {
-          sentSuccessfully = true;
-        }
+          publicKey
+        );
+        sentViaEmailJS = true;
       } catch (err) {
-        console.warn("FormSubmit endpoint error, opening mail client...", err);
+        console.warn("EmailJS sending error:", err);
       }
     }
 
-    if (sentSuccessfully) {
-      toast.success("Query Sent Successfully!", {
-        description: "Your inquiry has been emailed directly to manpreetsingh70.it@gmail.com. Manpreet will reply to your email shortly!"
+    if (sentViaEmailJS) {
+      toast.success("Message Sent via EmailJS!", {
+        description: "Thank you! Your inquiry has been emailed directly to manpreetsingh70.it@gmail.com."
       });
 
       setFormData({
@@ -93,9 +90,9 @@ export const ContactSection = () => {
         message: ""
       });
     } else {
-      // 3. Simple mailto fallback
+      // Direct Email Client Fallback
       const mailtoUrl = `mailto:${targetEmail}?subject=${encodeURIComponent(
-        formData.subject || `Inquiry from ${formData.name}`
+        formData.subject || `Portfolio Inquiry from ${formData.name}`
       )}&body=${encodeURIComponent(
         `Name: ${formData.name}\nEmail: ${formData.email}\nService: ${formData.service}\nBudget: ${formData.budget}\n\nMessage:\n${formData.message}`
       )}`;
@@ -103,7 +100,7 @@ export const ContactSection = () => {
       window.location.href = mailtoUrl;
 
       toast.info("Opening Mail Client...", {
-        description: "Pre-filled query ready to send to manpreetsingh70.it@gmail.com."
+        description: "EmailJS keys pending setup. Your mail client has been opened with your inquiry pre-filled to manpreetsingh70.it@gmail.com."
       });
     }
 
@@ -124,7 +121,7 @@ export const ContactSection = () => {
             Let&apos;s Build Something <span className="gradient-text">Great Together</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg text-muted-foreground">
-            Submit your query below. All messages are emailed directly to <strong className="text-foreground">manpreetsingh70.it@gmail.com</strong>.
+            Submit your query below. All messages are delivered directly to <strong className="text-foreground">manpreetsingh70.it@gmail.com</strong> via EmailJS.
           </p>
         </div>
 
@@ -249,10 +246,10 @@ export const ContactSection = () => {
           >
             <h3 className="font-bold text-2xl mb-2 flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-primary" />
-              Submit Your Project Query
+              Send Email Message
             </h3>
             <p className="text-xs text-muted-foreground mb-6">
-              When submitted, a simple summary email will be sent directly to <strong className="text-foreground">manpreetsingh70.it@gmail.com</strong>.
+              Fill out your project details below to email <strong className="text-foreground">manpreetsingh70.it@gmail.com</strong> directly via EmailJS.
             </p>
 
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
@@ -350,7 +347,7 @@ export const ContactSection = () => {
                   className="flex-1 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 text-white font-bold rounded-xl text-sm py-6 shadow-xl hover:opacity-95 transition-opacity"
                 >
                   <Send className="w-4 h-4 mr-2" />
-                  {isSubmitting ? "Sending Query Email..." : "Submit Query Email"}
+                  {isSubmitting ? "Sending EmailJS..." : "Send Message via EmailJS"}
                 </Button>
 
                 <a
@@ -363,7 +360,7 @@ export const ContactSection = () => {
                     className="w-full sm:w-auto rounded-xl py-6 border-border font-bold text-xs"
                   >
                     <Mail className="w-4 h-4 mr-2 text-purple-500" />
-                    Open Email App
+                    Open Mail App
                   </Button>
                 </a>
               </div>

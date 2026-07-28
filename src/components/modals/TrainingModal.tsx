@@ -29,41 +29,48 @@ export const TrainingModal = ({ isOpen, onClose }: TrainingModalProps) => {
     setIsSubmitting(true);
 
     const targetEmail = "manpreetsingh70.it@gmail.com";
-    const formSubmitHash = "88aeb9484a1213b3f8f2bc9b2dd2755c";
-    let sentSuccessfully = false;
+    let sentViaEmailJS = false;
 
-    // 1. Try FormSubmit AJAX endpoint
-    try {
-      const response = await fetch(`https://formsubmit.co/ajax/${formSubmitHash}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({
-          "Student Name": name,
-          "Student Email": email,
-          "Student Phone": phone,
-          "Training Format": format,
-          "Target Technology": topic,
-          "Learning Message": message,
-          "_subject": `🎓 New Training & Mentorship Request: ${name} (${topic})`,
-          "_replyto": email,
-          "_template": "table",
-          "_captcha": "false"
-        })
-      });
+    // EmailJS Keys
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      if (response.ok) {
-        sentSuccessfully = true;
+    if (serviceId && templateId && publicKey) {
+      try {
+        const formattedMessage = `Phone / WhatsApp: ${phone}
+Training Format: ${format}
+Target Topic: ${topic}
+
+Learning Objectives / Message:
+${message}`;
+
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            name: name,
+            email: email,
+            from_name: name,
+            from_email: email,
+            reply_to: email,
+            phone_number: phone,
+            training_format: format,
+            target_topic: topic,
+            message: formattedMessage,
+            subject: `🎓 New Training & Mentorship Request: ${name} (${topic})`
+          },
+          publicKey
+        );
+        sentViaEmailJS = true;
+      } catch (err) {
+        console.warn("EmailJS training booking error:", err);
       }
-    } catch (err) {
-      console.warn("FormSubmit endpoint error, opening mailto...", err);
     }
 
-    if (sentSuccessfully) {
+    if (sentViaEmailJS) {
       toast.success("Training Request Emailed!", {
-        description: "Thank you for booking! Your details have been sent directly to manpreetsingh70.it@gmail.com. Manpreet will contact you shortly."
+        description: "Thank you for booking! Your details have been sent directly to manpreetsingh70.it@gmail.com via EmailJS. Manpreet will contact you shortly."
       });
       
       setName("");
@@ -81,7 +88,7 @@ export const TrainingModal = ({ isOpen, onClose }: TrainingModalProps) => {
       
       window.location.href = mailtoUrl;
 
-      toast.info("Opening Email App...", {
+      toast.info("Opening Mail Client...", {
         description: "Pre-filled training booking ready to send to manpreetsingh70.it@gmail.com."
       });
       onClose();
@@ -113,7 +120,7 @@ export const TrainingModal = ({ isOpen, onClose }: TrainingModalProps) => {
             </div>
             <div>
               <h2 className="font-bold text-2xl">Book a Training & Mentorship Session</h2>
-              <p className="text-xs text-muted-foreground">Submit details below to email your training query to manpreetsingh70.it@gmail.com.</p>
+              <p className="text-xs text-muted-foreground">Submit details below to email your training query to manpreetsingh70.it@gmail.com via EmailJS.</p>
             </div>
           </div>
 
@@ -200,7 +207,7 @@ export const TrainingModal = ({ isOpen, onClose }: TrainingModalProps) => {
                 className="flex-1 bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-500 text-white font-bold rounded-xl py-6 shadow-lg hover:opacity-95 transition-opacity"
               >
                 <Send className="w-4 h-4 mr-2" />
-                {isSubmitting ? "Sending Request Email..." : "Submit & Send Email Request"}
+                {isSubmitting ? "Sending Request..." : "Submit & Send EmailJS Request"}
               </Button>
 
               <a
